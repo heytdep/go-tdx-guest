@@ -135,7 +135,7 @@ func (p *LinuxConfigFsQuoteProvider) GetRawQuote(reportData [64]byte) ([]uint8, 
 	}
 	fmt.Printf("getting raw quote through tsm")
 	resp, err := linuxtsm.GetReport(req)
-	fmt.Printf("quote %x", resp)
+	//fmt.Printf("quote %x", resp)
 	if err != nil {
 		return nil, err
 	}
