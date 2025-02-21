@@ -133,6 +133,7 @@ func (p *LinuxConfigFsQuoteProvider) GetRawQuote(reportData [64]byte) ([]uint8, 
 		InBlob:     reportData[:],
 		GetAuxBlob: false,
 	}
+	fmt.Printf("getting raw quote through tsm")
 	resp, err := linuxtsm.GetReport(req)
 	if err != nil {
 		return nil, err
@@ -143,5 +144,6 @@ func (p *LinuxConfigFsQuoteProvider) GetRawQuote(reportData [64]byte) ([]uint8, 
 
 // GetQuoteProvider returns an instance of LinuxConfigFsQuoteProvider.
 func GetQuoteProvider() (*LinuxConfigFsQuoteProvider, error) {
+	fmt.Printf("requested linux quote provider")
 	return &LinuxConfigFsQuoteProvider{}, nil
 }
