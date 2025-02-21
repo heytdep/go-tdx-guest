@@ -15,3 +15,5 @@ require (
 )
 
 require github.com/google/go-tpm v0.9.0 // indirect
+
+replace github.com/google/go-configfs-tsm => ../go-configfs-tsm
